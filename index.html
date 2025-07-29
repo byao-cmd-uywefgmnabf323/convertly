@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertly - Smart Unit Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Convertly <i class="fas fa-exchange-alt"></i></h1>
+            <p>Your smart, intuitive unit conversion companion</p>
+        </header>
+
+        <div class="converter-container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="length">
+                    <i class="fas fa-ruler"></i> Length
+                </button>
+                <button class="tab-btn" data-category="mass">
+                    <i class="fas fa-weight"></i> Mass
+                </button>
+                <button class="tab-btn" data-category="temperature">
+                    <i class="fas fa-thermometer-half"></i> Temperature
+                </button>
+                <button class="tab-btn" data-category="volume">
+                    <i class="fas fa-wine-bottle"></i> Volume
+                </button>
+                <button class="tab-btn" data-category="time">
+                    <i class="far fa-clock"></i> Time
+                </button>
+                <button class="tab-btn" data-category="speed">
+                    <i class="fas fa-tachometer-alt"></i> Speed
+                </button>
+                <button class="tab-btn" data-category="currency">
+                    <i class="fas fa-money-bill-wave"></i> Currency
+                </button>
+            </div>
+
+            <div class="converter-box">
+                <div class="input-group">
+                    <input type="number" id="from-value" placeholder="Enter value" value="1">
+                    <select id="from-unit">
+                        <!-- Units will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <button id="swap-units" class="swap-btn" aria-label="Swap units">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="input-group">
+                    <input type="number" id="to-value" placeholder="Result" readonly>
+                    <select id="to-unit">
+                        <!-- Units will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <p id="conversion-formula">1 meter = 3.28084 feet</p>
+                <button id="add-favorite" class="favorite-btn" aria-label="Add to favorites">
+                    <i class="far fa-star"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="recent-conversions">
+            <h3>Recent Conversions</h3>
+            <ul id="recent-list">
+                <!-- Recent conversions will be added here by JavaScript -->
+            </ul>
+            <button id="clear-recent" class="text-btn">Clear History</button>
+        </div>
+
+        <div class="trivia-container">
+            <div class="trivia">
+                <i class="fas fa-lightbulb"></i>
+                <p id="trivia-text">Did you know? The meter was originally defined as one ten-millionth of the distance from the equator to the North Pole.</p>
+            </div>
+        </div>
+    </div>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="js/units.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
